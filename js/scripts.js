@@ -5,9 +5,31 @@ function Dice(result, score) {
   this.score = score;
 }
 
-function rollOne(rollNum) {
-  if (rollNum === 1)
-    return "Your score is " + 0;
+function rollDice(rollNum) {
+  let sum = 0
+  switch (rollNum) {
+    case (1):
+      rollNum + sum;
+      break;
+    case (2):
+      rollNum + sum;
+      break;
+    case (3):
+      rollNum + sum;
+      break;
+    case (4):
+      rollNum + sum;
+      break;
+    case (5):
+      rollNum + sum;
+      break;
+    case (6):
+      rollNum + sum;
+      break;
+
+
+  }
+
 }
 
 
