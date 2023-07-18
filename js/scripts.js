@@ -1,36 +1,30 @@
 // Business Logic 
 
-function Dice(result, score) {
+function Dice(result) {
   this.result = result;
-  this.score = score;
+  this.score = [];
 }
 
-function rollDice(rollNum) {
-  let sum = 0
-  switch (rollNum) {
-    case (1):
-      rollNum + sum;
-      break;
-    case (2):
-      rollNum + sum;
-      break;
-    case (3):
-      rollNum + sum;
-      break;
-    case (4):
-      rollNum + sum;
-      break;
-    case (5):
-      rollNum + sum;
-      break;
-    case (6):
-      rollNum + sum;
-      break;
+function rollDice(dice, roll) {
+  let sum = 0;
 
-
+  if (roll === 1) {
+    sum = 0;
+  } else {
+    sum + roll;
   }
-
+  dice.score.push(sum)
 }
 
+function addTotals() {
+  let num = [this.score];
+  let numTotal = []
+  num.forEach(function (num) {
+    for (i = 0; i < sumTotal; i++)
+      numTotal.addTotals(num)
+  })
+}
+
+let dice = new Dice();
 
 
