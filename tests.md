@@ -6,10 +6,10 @@ let roll = 1;
 rollDice(roll);
 Expected output: "Your score is 0"
 
-Test: "If a 2 is rolled, the score of 2 is added to the previous result until 100 is reached."
-Code:
+Test: "If a number of 2-6 is rolled, it is added to the score array in the dice object."
 let roll = 2;
 rollDice(roll);
-Expected output: "Your score is 100"
+console.log(dice.score);
+Expected output: 2
 
 

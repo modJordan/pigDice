@@ -1,30 +1,75 @@
-// Business Logic 
+//Business Logic
 
-function Dice(result) {
-  this.result = result;
-  this.score = [];
-}
-
-function rollDice(dice, roll) {
-  let sum = 0;
-
-  if (roll === 1) {
-    sum = 0;
-  } else {
-    sum + roll;
+class Player {
+  constructor(name) {
+    this.name = name;
   }
-  dice.score.push(sum)
+
+  name = "";
+  totalScore = 0;
+  currentScore = 0;
+  diceRoll;
+  playerTurn = false;
+  addPlayer = addPlayer;
+
+  rollDice() {
+    this.diceRoll = Math.floor(Math.random() * 6) + 1;
+  }
+
+  playTurn() {
+    this.rollDice();
+    if (this.diceRoll === 1) {
+      this.resetScore();
+      this.playerTurn = false;
+    } else {
+      this.currentScore += this.diceRoll;
+    }
+  }
+
+  hold() {
+    this.totalScore += this.currentScore;
+    this.resetScore();
+    this.playerTurn = false;
+  }
+
+  resetScore() {
+    this.currentScore = 0;
+  }
+
+  addPlayer() {
+    this.name = document.getElementById("#player2").removeAttribute("hidden");
+
+  }
 }
 
-function addTotals() {
-  let num = [this.score];
-  let numTotal = []
-  num.forEach(function (num) {
-    for (i = 0; i < sumTotal; i++)
-      numTotal.addTotals(num)
-  })
+class Game {
+  constructor() {
+
+  }
 }
 
-let dice = new Dice();
+window.addEventListener("load", () => {
+  const rollButton = document.getElementById("roll-dice");
+  const holdButton = document.getElementById("hold");
+  const addPlayerButton = document.getElementById("add-player");
+  const currentScoreElement = document.getElementById("current-score");
+  const totalScoreElement = document.getElementById("total-score");
 
+  const player = new Player(this.name);
+  currentScoreElement.innerText = player.currentScore;
+  totalScoreElement.innerText = player.totalScore;
 
+  rollButton.addEventListener("click", () => {
+    player.playTurn();
+    currentScoreElement.innerText = player.currentScore;
+  });
+
+  holdButton.addEventListener("click", () => {
+    player.hold();
+    currentScoreElement.innerText = player.currentScore;
+    totalScoreElement.innerText = player.totalScore;
+  });
+
+  addPlayerButton.addEventListener("click", () => {
+    player.addPlayer()
+  });
